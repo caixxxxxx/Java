@@ -6,7 +6,7 @@ package com.thealgorithms.strings;
 public class StringCompression {
   /**
    * Returns the compressed or encoded string
-   * 
+   *
    * @param ch character array that contains the group of characters to be encoded
    * @return the compressed character array as string
    */
@@ -24,6 +24,7 @@ public class StringCompression {
     for (int i = 0; i < input.length() - 1; i++) {
       // here we check for similarity of the adjacent elements and change the count
       // accordingly
+      //get each character and compare it with the next character
       if (input.charAt(i) == input.charAt(i + 1)) {
         count = count + 1;
       }
@@ -36,6 +37,7 @@ public class StringCompression {
           break;
         } else {
           compressedString = appendCount(compressedString, count, input.charAt(i));
+          //reset the count
           count = 1;
         }
       }
